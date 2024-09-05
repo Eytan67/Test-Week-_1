@@ -45,10 +45,28 @@ namespace TestWeek_1.TSB
                 return root;
         }
 
-        //private 
-        //public void Print()
-        //{
+        public void Print()
+        {
+            PreOrderTraversal(Root);
+        }
+        public int Min()
+        {
+            return Min(Root);
+        }
 
-        //}
+        private int Min(Defence root)
+        {
+            if(root.Left == null)
+                return root.MinSeverity;
+            return Min(root.Left);
+
+        }
+        private void PreOrderTraversal(Defence root)
+        {
+            if(root == null) return;
+            Console.WriteLine(root.ToString());
+            PreOrderTraversal(root.Left);
+            PreOrderTraversal(root.Right);
+        }
     }
 }
