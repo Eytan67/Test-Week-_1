@@ -13,25 +13,22 @@ namespace TestWeek_1
     internal class Program
     {
 
+        public static string defencePath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\JsonFiles\\defenceStrategiesBalanced.json";
+        public static string threatPath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\JsonFiles\\threats.json";
         static void Main(string[] args)
         {
-            BinarySearchTree tree = new BinarySearchTree();
-            string defencePath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\defenceStrategiesBalanced.json";
-            string threatPath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\threats.json";
+         //string currentDirectory = Directory.GetCurrentDirectory();
+
 
             var defences = Loder<Defence>.Load(defencePath);
+            BinarySearchTree tree = new BinarySearchTree(defences);
+            tree.Print();
+
             var threat = Loder<Threat>.Load(threatPath);
 
+            Firewall firewall = new Firewall(tree, threat);
+            firewall.Defence();
 
-            foreach (Defence defence in defences)
-            {
-                tree.Insert(defence);
-            }
-            Console.WriteLine(tree.Find(20).ToString());
-            //tree.Print();
-            
-            
-            
             Console.ReadLine();
         }
     }

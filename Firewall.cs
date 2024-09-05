@@ -13,24 +13,28 @@ namespace TestWeek_1
     {
         private string _lowMassage = "is severity Attack below the threshold. Attack is ignored";
         private string _noSuitableMassage = "was defence suitable No found. Brace for impact";
-        public List<Threat> Threats;
-        public BinarySearchTree DefencesTree;
-
+        public List<Threat> _threats;
+        private BinarySearchTree _defencesTree;
+        public Firewall(BinarySearchTree tree, List<Threat> threats)
+        {
+            _defencesTree = tree;
+            _threats = threats;
+        }
         public void Defence()
         {
-            for (int i = 0; i < Threats.Count; ++i)
+            for (int i = 0; i < _threats.Count; ++i)
             {
-                var defence = DefencesTree.Find(Threats[i].Severity);
+                var defence = _defencesTree.Find(_threats[i].Severity);
                 if (defence != null)
                 {
-                    Console.WriteLine("תחילת הגנה");//!!!!!!!!!!!!
+                    Console.WriteLine(">>>>>>>>>>>>>");//!!!!!!!!!!!!
                 defence.Active();
-                    Console.WriteLine("תחילת הגנה");//!!!!!!!!!!!!
+                    Console.WriteLine("<<<<<<<<<<<<<");//!!!!!!!!!!!!
                 }
                 else
                 {
                     string massage =
-                    Threats[i].Severity < DefencesTree.Min() ?
+                    _threats[i].Severity < _defencesTree.Min() ?
                     _lowMassage : _noSuitableMassage;
                     Console.WriteLine(massage);
                 }

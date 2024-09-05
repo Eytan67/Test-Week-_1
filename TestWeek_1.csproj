@@ -71,7 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attack.cs" />
     <Compile Include="Enums\ETargets.cs" />
     <Compile Include="Firewall.cs" />
     <Compile Include="utils\Loder.cs" />
@@ -83,9 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="defenceStrategiesBalanced.json" />
+    <None Include="JsonFiles\defenceStrategiesBalanced.json" />
     <None Include="packages.config" />
-    <None Include="threats.json" />
+    <None Include="JsonFiles\threats.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Loaders\" />

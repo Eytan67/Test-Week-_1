@@ -8,11 +8,11 @@ namespace TestWeek_1
         public string ThreatType { get; set; }
         public int Volume { get; set; }
         public int Sophistication { get; set; }
-        public string Targets { get; set; }
+        public string Target { get; set; }
         public int Severity { get { return CalculateSeverity(); } }
         private int CalculateSeverity()
         {
-            return (Volume * Sophistication) + TargetValues(Targets);
+            return (Volume * Sophistication) + TargetValues(Target);
         }
         private int TargetValues(string targets)
         {
