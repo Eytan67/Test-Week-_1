@@ -6,13 +6,12 @@ namespace TestWeek_1
 {
     internal class Program
     {
-
-        private readonly static string _defencePath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\JsonFiles\\defenceStrategiesBalanced.json";
-        private readonly static string _threatPath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\JsonFiles\\threats.json";
+        private readonly static string _basePath = "C:\\\\Users\\\\user\\\\source\\\\repos\\\\data\\\\Tests\\\\Week_1\\\\TestWeek_1\\\\JsonFiles\\";
+        private readonly static string _defencePath = $"{_basePath}defenceStrategiesBalanced.json";
+        private readonly static string _threatPath = $"{_basePath}threats.json";
         
         static void Main(string[] args)
         {
-         //string currentDirectory = Directory.GetCurrentDirectory();
 
             //Load json files.
             var defences = Loder<Defence>.Load(_defencePath);
