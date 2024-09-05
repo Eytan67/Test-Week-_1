@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using TestWeek_1.Enums;
+
 
 namespace TestWeek_1
 {
@@ -10,27 +10,29 @@ namespace TestWeek_1
         public int Sophistication { get; set; }
         public string Target { get; set; }
         public int Severity { get { return CalculateSeverity(); } }
+
+        //O(1).
         private int CalculateSeverity()
         {
             return (Volume * Sophistication) + TargetValues(Target);
         }
+
+        //O(1).
         private int TargetValues(string targets)
         {
             int value = 5;
-            TargetsValues.TryGetValue(targets, out value);
+            _targetsValues.TryGetValue(targets, out value);
             return value;
         }
-        private Dictionary<string, int> TargetsValues = new Dictionary<string, int>
+
+        private Dictionary<string, int> _targetsValues = new Dictionary<string, int>
         {
             { "Web Server", 10 },
             { "Database", 15 },
             { "User Credentials", 20 }
         };
 
-
-
-
-
-
     }
+
 }
+

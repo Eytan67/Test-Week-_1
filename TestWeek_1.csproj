@@ -71,13 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\ETargets.cs" />
     <Compile Include="Firewall.cs" />
     <Compile Include="utils\Loder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Threat.cs" />
-    <Compile Include="TSB\BinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Defence.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,8 +85,6 @@
     <None Include="packages.config" />
     <None Include="JsonFiles\threats.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Loaders\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

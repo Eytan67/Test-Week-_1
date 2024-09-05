@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace TestWeek_1.TSB
 {
     internal class BinarySearchTree
     {
-        public Defence Root {  get; set; }
+        private Defence _root {  get; set; }
+
+        //O(n log(n)).
         public BinarySearchTree(List<Defence> children)
         {
             for(int i = 0; i < children.Count; ++i)
@@ -17,11 +17,13 @@ namespace TestWeek_1.TSB
             }
         }
 
+        //O(log(n)).
         public void Insert(Defence node)
         {
-            Root = Insert(Root, node);
+            _root = Insert(_root, node);
         }
 
+        //O(log(n)).
         private Defence Insert(Defence root, Defence node)
         {
             if (root == null)
@@ -35,11 +37,13 @@ namespace TestWeek_1.TSB
             return root;
         }
 
+        //O(log(n)).
         public Defence Find(int value)
         {
-            return Find(Root, value);
+            return Find(_root, value);
         }
 
+        //O(log(n)).
         private Defence Find(Defence root, int value)
         {
             if (root == null)
@@ -52,15 +56,19 @@ namespace TestWeek_1.TSB
                 return root;
         }
 
+        //O(n).
         public void Print()
         {
-            PreOrderTraversal(Root);
-        }
-        public int Min()
-        {
-            return Min(Root);
+            PreOrderTraversal(_root);
         }
 
+        //O(log(n)).
+        public int Min()
+        {
+            return Min(_root);
+        }
+
+        //O(log(n)).
         private int Min(Defence root)
         {
             if(root.Left == null)
@@ -68,6 +76,8 @@ namespace TestWeek_1.TSB
             return Min(root.Left);
 
         }
+
+        //O(n).
         private void PreOrderTraversal(Defence root)
         {
             if(root == null) return;
@@ -75,5 +85,7 @@ namespace TestWeek_1.TSB
             PreOrderTraversal(root.Left);
             PreOrderTraversal(root.Right);
         }
+
     }
+
 }

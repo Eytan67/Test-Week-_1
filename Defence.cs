@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 
@@ -10,6 +7,7 @@ namespace TestWeek_1.TSB
 {
     internal class Defence
     {
+        private readonly int _sleepDuration = 2000;
         public int MinSeverity { get; set; }
         public int MaxSeverity { get; set; }
         public List<string> Defenses { get; set; }
@@ -18,15 +16,18 @@ namespace TestWeek_1.TSB
 
         public string ToString()
         {
-            return $"[{MinSeverity}-{MaxSeverity} Defences: {Defenses}]";
+            return $" [{MinSeverity}-{MaxSeverity} Defences: {Defenses}]";
         }
         public void Active()
         {
             for (int i = 0; i < Defenses.Count; i++)
             {
-                Console.WriteLine(Defenses[i]);
-                Thread.Sleep(2000);
+                Console.WriteLine($"\t{Defenses[i]}");
+                Thread.Sleep(_sleepDuration);
             }
         }
+
     }
+
 }
+
