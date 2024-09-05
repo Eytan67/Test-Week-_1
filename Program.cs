@@ -16,14 +16,19 @@ namespace TestWeek_1
         static void Main(string[] args)
         {
             BinarySearchTree tree = new BinarySearchTree();
-            string path = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\defenceStrategiesBalanced.json";
+            string defencePath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\defenceStrategiesBalanced.json";
+            string threatPath = "C:\\Users\\user\\source\\repos\\data\\Tests\\Week_1\\TestWeek_1\\threats.json";
 
-            var defences = Loder<Defence>.Load(path);
+            var defences = Loder<Defence>.Load(defencePath);
+            var threat = Loder<Threat>.Load(threatPath);
+
 
             foreach (Defence defence in defences)
             {
                 tree.Insert(defence);
             }
+            Console.WriteLine(tree.Find(20).ToString());
+            //tree.Print();
             
             
             

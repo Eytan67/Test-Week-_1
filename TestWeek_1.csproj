@@ -71,7 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attack.cs" />
     <Compile Include="Enums\ETargets.cs" />
+    <Compile Include="Firewall.cs" />
     <Compile Include="utils\Loder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
