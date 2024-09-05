@@ -9,6 +9,13 @@ namespace TestWeek_1.TSB
     internal class BinarySearchTree
     {
         public Defence Root {  get; set; }
+        public BinarySearchTree(List<Defence> children)
+        {
+            for(int i = 0; i < children.Count; ++i)
+            {
+                this.Insert(children[i]);
+            }
+        }
 
         public void Insert(Defence node)
         {
